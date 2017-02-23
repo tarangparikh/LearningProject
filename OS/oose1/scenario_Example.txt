@@ -1,0 +1,24 @@
+Example Scenarios for Online Shopping WebSite :
+
+1. User visits the web site. 
+User opens registration page.
+User fill all registration related details.
+Details are verified by the system.
+User is successfully registered in the system.
+
+2.
+User visit web site.
+User login to the system.
+User selects category.
+User selects quantity and other item details.
+User add item to the cart.
+User makes payment of the item.
+Order is successfully placed.
+
+3.
+User visit web site.
+User login to the system.
+User selects category.
+User selects quantity and other item details.
+Item is out of stock so user is shown error and redirected to the home page.
+
