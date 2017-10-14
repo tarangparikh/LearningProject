@@ -1,0 +1,59 @@
+module SigN:
+	input WG,WR,VS,VW,MinUp;
+	output SG,SR;
+	
+	loop
+		do
+			do
+				sustain SR;
+			watching SG;
+			await MinUp;
+		watching VW;
+	end loop;
+	||
+	loop
+	await VS;
+	present WG then
+		do
+			loop
+				pause
+			end loop
+		watching WR;
+	end present;
+	do
+		do
+			sustain SG;
+		watching MinUp;
+	watching VW;
+	end loop
+end module
+
+module SigW:
+	input SG,SR,VW,MinUp;
+	output WG,WR;
+	
+	loop
+		do
+			sustain WR;
+		watching WG;
+		await MinUp;
+	end loop;
+	||
+	loop
+		await VW;
+		do
+			sustain WG;
+		watching MinUp;
+	end loop
+end module
+
+module Main:
+
+	input MinUp,VS,VW;
+	output SG,SR,WG,WR;
+	
+	run SigN;
+	||
+	run SigW;
+	
+end module
